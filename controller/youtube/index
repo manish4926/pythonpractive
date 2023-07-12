@@ -1,0 +1,60 @@
+import tkinter
+import customtkinter
+from pytube import YouTube
+import os
+
+#system settings
+# customtkinter.set_appearance_mode("System")
+# customtkinter.set_default_color_theme("blue")
+
+#app frame
+# app = customtkinter.CTk()
+# app.geometry("750x480")
+# app.title("Youtube Downloader")
+
+def downloadVideo():
+    try:
+        YouTube('https://youtu.be/2lAe1cqCOXo').streams.first().download()
+        # link="https://www.youtube.com/watch?v=xWOoBJUqlbI"
+        # yt = YouTube(link)
+        # # print(yt)
+        # stream = yt.streams.first()
+        # print(stream)
+        # mp4files = yt.filter('mp4')
+        # yt.set_filename('GeeksforGeeks Video')
+        # d_video = yt.get(mp4files[-1].extension,mp4files[-1].resolution)
+        # print(d_video)
+        # http://youtube.com/watch?v=9bZkp7q19f0
+        # ytLink = link.get()
+        # ytObject = YouTube(ytLink)
+        # print(ytObject)
+        # video = ytObject.streams.get_highest_resolution()
+        #
+        # # Download the video to the current directory
+        # video.download(os.getcwd())
+        # print("Video downloaded successfully!")
+    except Exception as e:
+        print("Error occurred: ", str(e))
+
+
+# downloadVideo()
+
+
+# add heading(label)
+# heading = customtkinter.CTkLabel(app, text="Insert a YouTube Link")
+# heading.pack(padx=10, pady=10)
+
+#add input
+# urlVar = tkinter.StringVar()
+# link = customtkinter.CTkEntry(app, width=350, height=40, textvariable=urlVar)
+# link.pack()
+
+# downloadButton = customtkinter.CTkButton(master=app, text="CTkButton", command=downloadVideo)
+# downloadButton.place(relx=0.5, rely=0.5, anchor=tkinter.CENTER)
+
+
+#run app
+# app.mainloop()
+
+
+
